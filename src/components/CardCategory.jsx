@@ -4,13 +4,15 @@ import styles from '../styles/CardCategory.module.scss';
 
 const CardCategory = ({name, urlImage, alt}) => {
   return (
-    <div className={`${styles.card} d-flex flex-column rounded-lg`}>
+    <div
+      className={`${styles.card} d-flex flex-column items-center
+    justify-center rounded-lg relative`}>
       <img
         className={`${styles.imgCard}`}
         src={urlImage}
         alt={alt} />
       <div className={styles.content}>
-        <p className='fw-bold'>{name}</p>
+        {name}
       </div>
     </div>
   )

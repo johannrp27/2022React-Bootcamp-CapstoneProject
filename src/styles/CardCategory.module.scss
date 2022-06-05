@@ -1,17 +1,26 @@
 .card {
-  background: white;
-  box-shadow: 0px 4px 10px 0px #a8a8a8;
   transition: transform 400ms;
+  max-width: 600px;
   &:hover {
     transform: scale(1.05);
+
+    .imgCard {
+      filter: brightness(1);
+    }
   }
-  max-width: 600px;
 }
 .imgCard {
-  width: 100%;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px 0px #a8a8a8;
+  transition: filter 300ms;
+  filter: brightness(0.5);
 }
 .content {
-  padding: 1rem;
+  position: absolute;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  text-align: center;
 }
