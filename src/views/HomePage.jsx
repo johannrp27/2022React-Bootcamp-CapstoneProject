@@ -1,8 +1,10 @@
 import React from 'react'
 import Slider from '../components/Slider'
 import categoriesData from '../assets/mocks/en-us/product-categories.json'
+import featuredData from '../assets/mocks/en-us/featured-products.json'
 import styles from '../styles/HomePage.module.scss'
 import GridCategories from './GridCategories'
+import GridFeatured from './GridFeatured'
 /**
 2.1. A Slider to display the featured banners from this mock file
 
@@ -12,7 +14,7 @@ import GridCategories from './GridCategories'
 
 const HomePage = () => {
   return (
-    <div className={`d-flex flex-column pt-5 ${styles.homepage}`}>
+    <div className={`d-flex flex-column p-5 gap-5 ${styles.homepage}`}>
       <div>
         <Slider />
       </div>
@@ -20,7 +22,7 @@ const HomePage = () => {
         <GridCategories data={categoriesData} />
       </div>
       <div>
-        Grid featured prods
+        <GridFeatured data={featuredData} />
       </div>
     </div>
   )
