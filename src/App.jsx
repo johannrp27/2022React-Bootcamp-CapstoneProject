@@ -1,4 +1,5 @@
 import React from 'react';
+import Home from './views/Home';
 import { useFeaturedBanners } from './utils/hooks/useFeaturedBanners';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
 
   return (
     <div className="App">
-      Hey
+      <Home />
     </div>
   );
 }
