@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import styles from '../styles/CardCategory.module.scss';
 
-import styles from '../styles/Card.module.scss';
-const Card = ({name, urlImage, alt}) => {
+const CardCategory = ({name, urlImage, alt}) => {
   return (
     <div className={`${styles.card} d-flex flex-column rounded-lg`}>
       <img
@@ -16,9 +16,9 @@ const Card = ({name, urlImage, alt}) => {
   )
 }
 
-Card.propTypes = {
+CardCategory.propTypes = {
   name: PropTypes.string,
   urlImage: PropTypes.string,
   alt: PropTypes.string,
 }
-export default Card
+export default CardCategory
