@@ -2,7 +2,7 @@ import React from 'react'
 import Slider from '../components/Slider'
 import categoriesData from '../assets/mocks/en-us/product-categories.json'
 import styles from '../styles/HomePage.module.scss'
-import GridCategories from '../components/GridCategories'
+import GridCategories from './GridCategories'
 /**
 2.1. A Slider to display the featured banners from this mock file
 
