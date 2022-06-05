@@ -1,8 +1,14 @@
 module.exports = {
   extends: [
-    'react-app',
+    'eslint:recommended',
+    'plugin:react/recommended',
     'react-app/jest',
   ],
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -11,7 +17,25 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/self-closing-comp': [
+      'error',
+      {
+        component: true,
+        html: true,
+      },
+    ],
+    'react/react-in-jsx-scope': 'off',
+    'react/no-unknown-property': 'off',
+    'react/button-has-type': 'off',
+    'react/jsx-first-prop-new-line': ['error', 'multiline'],
+    'react/jsx-indent': ['error', 2, {'checkAttributes': true, 'indentLogicalExpressions': true}],
+    'react/jsx-indent-props': ['error', 2],
+    'react/jsx-max-props-per-line': [
+      'error',
+      { maximum: { single: 1, multi: 1 } },
+    ],
+    'react/jsx-props-no-spreading': 'off',
+    'import/prefer-default-export': 'off',
     'import/extensions': [0],
     'comma-dangle': [
       'error',
@@ -29,7 +53,7 @@ module.exports = {
         code: 100,
       },
     ],
-    eqeqeq: [
+    'eqeqeq': [
       'error',
       'always',
       {
@@ -38,9 +62,6 @@ module.exports = {
     ],
     'no-await-in-loop': ['error'],
     'no-param-reassign': 'error',
-    'react/self-closing-comp': 'error',
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
     'lines-between-class-members': [
       'error',
       'always',
@@ -49,6 +70,6 @@ module.exports = {
       },
     ],
     'no-sparse-arrays': 0,
-    curly: 'error',
+    'curly': 'error',
   },
 };
