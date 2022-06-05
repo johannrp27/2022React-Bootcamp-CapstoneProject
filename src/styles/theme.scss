@@ -1,0 +1,11 @@
+@import './_variables.scss';
+@import './_reboot.scss';
+@import './_helpers.scss';
+@import './_mixins.scss';
+
+body {
+  margin: 0;
+  font-family: #{$font-family-sans-serif};
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

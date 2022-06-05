@@ -1,0 +1,57 @@
+// Display
+.d-flex {
+  display: flex;
+}
+.d-block {
+  display: block;
+}
+.d-none {
+  display: none;
+}
+.d-grid{
+  display: grid;
+}
+
+// Align
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+// Font weights
+.fw-light {
+  font-weight: 300;
+}
+.fw-regular {
+  font-weight: 400;
+}
+.fw-medium {
+  font-weight: 500;
+}
+.fw-bold {
+  font-weight: 600;
+}
+
+// Radius
+.rounded-sm {
+  border-radius: 8px;
+}
+.rounded {
+  border-radius: 10px;
+}
+.rounded-lg {
+  border-radius: 12px;
+}
+.rounded-circle {
+  border-radius: 50%;
+}
+
+// Flex
+.flex-column {
+  flex-direction: column;
+}

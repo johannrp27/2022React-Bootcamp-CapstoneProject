@@ -1,0 +1,32 @@
+@each $level, $value in $font-sizes {
+  .h#{$level}, h#{$level} {
+    font-size: #{$value};
+  }
+}
+@each $level, $value in $spacers {
+  .p-#{$level} {
+    padding: #{$value};
+  }
+  .px-#{$level} {
+    padding-left: #{$value};
+    padding-right: #{$value};
+  }
+  .py-#{$level} {
+    padding-top: #{$value};
+    padding-bottom: #{$value};
+  }
+  .m-#{$level} {
+    margin: #{$value};
+  }
+  .mx-#{$level} {
+    margin-left: #{$value};
+    margin-right: #{$value};
+  }
+  .my-#{$level} {
+    margin-top: #{$value};
+    margin-bottom: #{$value};
+  }
+  .gap-#{$level} {
+    gap: #{$value};
+  }
+}
