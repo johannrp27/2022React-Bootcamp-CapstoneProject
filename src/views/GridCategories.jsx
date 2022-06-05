@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import Card from '../components/Card';
+import CardCategory from '../components/CardCategory';
 import styles from '../styles/GridCategories.module.scss';
 
 const GridCategories = ({data}) => {
   const categories = data.results;
   return (
-    <div className='mx-4'>
-      <h3 className='mb-4'>Our Available Categories</h3>
+    <>
+      <h4 className='mb-4'>Our Available Categories</h4>
       <div className={`${styles.grid} gap-5`}>
         {
           categories.map(({id, data: {name, main_image}}) => (
-            <Card
+            <CardCategory
               name={name}
               alt={main_image.alt}
               urlImage={main_image.url}
@@ -19,7 +19,7 @@ const GridCategories = ({data}) => {
           ))
         }
       </div>
-    </div>
+    </>
   )
 }
 
