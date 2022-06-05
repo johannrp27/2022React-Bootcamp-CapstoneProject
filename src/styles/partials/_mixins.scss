@@ -3,6 +3,17 @@
     font-size: #{$value};
   }
 }
+@each $side, $sidePosition in $sides {
+  @each $level, $value in $spacers {
+    .m#{$side}-#{$level} {
+      @debug ".m#{$side}-#{$level}";
+      margin-#{$sidePosition}:$value;
+    }
+    .p#{$side}-#{$level} {
+      padding-#{$sidePosition}:$value;
+    }
+  }
+}
 @each $level, $value in $spacers {
   .p-#{$level} {
     padding: #{$value};
