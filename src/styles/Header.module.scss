@@ -1,0 +1,29 @@
+.nav {
+  background-color: #f4f4f4;
+  // box-shadow: 0 0 12px 5px #cdcdcd;
+}
+.logo {
+  flex-grow: 1;
+}
+.logo_img {
+  height: 30px;
+}
+.logoText {
+  font-size: 22px;
+  color: #6D6E71;
+}
+.button {
+  border: none;
+  background: inherit;
+  color: #6d6e71;
+}
+.search {
+  border: none;
+  border-bottom: 1px solid #ababab;
+  background-color: inherit;
+
+  &:focus, &:focus-visible {
+    outline: none;
+    border-bottom: 1px solid #888888;
+  }
+}
