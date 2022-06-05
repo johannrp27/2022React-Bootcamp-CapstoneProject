@@ -13,8 +13,20 @@
 }
 
 // Align
+.text-center {
+  text-align: center;
+}
+.text-start {
+  text-align: left;
+}
+.text-end {
+  text-align: right;
+}
 .items-center {
   align-items: center;
+}
+.items-baseline {
+  align-items: baseline;
 }
 .justify-center {
   justify-content: center;
@@ -68,4 +80,7 @@
 }
 .vw-100 {
   width: 100vw;
+}
+.small {
+  font-size: 80%;
 }
