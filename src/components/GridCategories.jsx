@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import Card from './Card';
-import styles from '../styles/Grid.module.scss';
+import styles from '../styles/GridCategories.module.scss';
 
-const Grid = ({data}) => {
+const GridCategories = ({data}) => {
   const categories = data.results;
   return (
     <div className='mx-4'>
@@ -23,8 +23,8 @@ const Grid = ({data}) => {
   )
 }
 
-Grid.propTypes = {
+GridCategories.propTypes = {
   data: PropTypes.object,
 }
 
-export default Grid
+export default GridCategories
