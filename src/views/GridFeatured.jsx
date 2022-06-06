@@ -8,7 +8,7 @@ const GridFeatured = ({data}) => {
   return (
     <>
       <h4 className='mb-4'>Discover the high-tier products</h4>
-      <div className={`${styles.grid} gap-5`}>
+      <div className={`d-grid ${styles.grid} gap-3`}>
         {
           featuredProducts.map(({data}) => (
             <CardFeatured

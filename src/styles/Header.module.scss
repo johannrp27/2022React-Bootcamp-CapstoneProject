@@ -9,8 +9,7 @@
   height: 30px;
 }
 .logoText {
-  font-size: 22px;
-  color: #6D6E71;
+  display: none;
 }
 .button {
   border: none;
@@ -25,5 +24,12 @@
   &:focus, &:focus-visible {
     outline: none;
     border-bottom: 1px solid #888888;
+  }
+}
+@media screen and (min-width: 768px) {
+  .logoText {
+    display: block;
+    font-size: 22px;
+    color: #6D6E71;
   }
 }

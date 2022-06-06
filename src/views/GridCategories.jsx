@@ -8,7 +8,7 @@ const GridCategories = ({data}) => {
   return (
     <>
       <h4 className='mb-4'>Our Available Categories</h4>
-      <div className={`${styles.grid} gap-5`}>
+      <div className={`d-grid gap-2 ${styles.grid}`}>
         {
           categories.map(({id, data: {name, main_image}}) => (
             <CardCategory

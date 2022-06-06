@@ -5,10 +5,11 @@ import styles from '../styles/CardFeatured.module.scss';
 const CardFeatured = ({name, urlImage, alt, shortDescription, stock, price}) => {
 
   return (
-    <div className={`${styles.card} d-flex items-center rounded-lg py-2`}>
+    <div className={`${styles.card} d-flex items-center rounded-lg`}>
       <img
         className={`m-2 ${styles.imgCard}`}
         src={urlImage}
+        loading="lazy"
         alt={alt} />
       <div className={styles.separator} />
       <div className={styles.content}>

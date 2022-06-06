@@ -9,7 +9,7 @@ const BannerSlider = ({data}) => {
   return (
     <Carousel
       className='mt-2'
-      autoPlay={true}
+      autoPlay={false}
       infiniteLoop={true}
       showThumbs={false}
       renderArrowPrev={() =>{}}
@@ -21,19 +21,22 @@ const BannerSlider = ({data}) => {
       {
         banners.map(({id, data}) => (
           <div
-            className={`d-flex gap-4 items-center relative rounded-lg mx-4 ${styles.slide}`}
+            className={`d-flex gap-4 items-center
+            justify-center relative rounded-lg mx-0 mx-lg-4 ${styles.slide}`}
             key={id}>
-            <div className="grow text-center w-100 p-4">
-              <h2 className={styles.title}>
+            <img
+              className={`${styles.imgBanner} rounded-lg`}
+              src={data.main_image.url}
+              loading="lazy" />
+            <div className="text-center absolute px-1">
+              <h4 className={styles.title}>
                 {data.title}
-              </h2>
+              </h4>
               <p className={styles.description}>
                 {data.description[0].text}
               </p>
             </div>
-            <img
-              className={`${styles.imgBanner} rounded-lg`}
-              src={data.main_image.url} />
+
           </div>
         ))
       }

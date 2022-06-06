@@ -1,13 +1,12 @@
-.title {
-
-}
-.description {
-
-}
 .imgBanner {
-  width: 700px !important;
+  filter: brightness(0.5);
 }
 .slide {
-  background: #1e416b;
+  flex-direction: column;
   color: #f0f0f0;
+}
+@media screen and (min-width: 576px) {
+  .slide {
+    flex-direction: row;
+  }
 }

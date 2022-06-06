@@ -1,3 +1,12 @@
+@media screen and (min-width: 768px) {
+  .card {
+    max-width: 120px;
+  }
+  .imgCard {
+    height: 150px;
+    border-radius: inherit;
+  }
+}
 .card {
   background: white;
   box-shadow: 0px 4px 10px 0px #a8a8a8;
@@ -8,7 +17,7 @@
   max-width: 600px;
 }
 .imgCard {
-  height: 150px;
+  height: 80px;
   border-radius: inherit;
 }
 .content {
@@ -27,3 +36,5 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+

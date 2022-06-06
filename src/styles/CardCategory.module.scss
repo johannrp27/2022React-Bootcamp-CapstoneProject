@@ -1,6 +1,14 @@
+@media screen and (min-width: 768px) {
+  .card {
+    width: auto;
+  }
+  .imgCard {
+    height: 200px;
+    border-radius: inherit;
+  }
+}
 .card {
   transition: transform 400ms;
-  max-width: 600px;
   &:hover {
     transform: scale(1.05);
 
@@ -10,8 +18,8 @@
   }
 }
 .imgCard {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   box-shadow: 0px 4px 8px 0px #a8a8a8;
   transition: filter 300ms;

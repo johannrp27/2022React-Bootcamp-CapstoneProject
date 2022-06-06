@@ -6,10 +6,11 @@ const CardCategory = ({name, urlImage, alt}) => {
   return (
     <div
       className={`${styles.card} d-flex flex-column items-center
-    justify-center rounded-lg relative`}>
+    justify-center rounded-lg relative m-4`}>
       <img
         className={`${styles.imgCard}`}
         src={urlImage}
+        loading="lazy"
         alt={alt} />
       <div className={styles.content}>
         {name}

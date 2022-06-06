@@ -12,10 +12,9 @@ const Header = () => {
           alt="Houseparts" />
         <span className={styles.logoText}>Houseparts</span>
       </div>
-      <input
-        className={`px-2 ${styles.search}`}
-        type="text"
-        placeholder='Search' />
+      <button className={`${styles.button} py-2 px-3 d-flex rounded-sm`}>
+        <FontAwesomeIcon icon="magnifying-glass" />
+      </button>
       <button className={`${styles.button} py-2 px-3 d-flex rounded-sm`}>
         <FontAwesomeIcon icon="cart-shopping" />
       </button>
