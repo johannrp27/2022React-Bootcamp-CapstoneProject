@@ -10,3 +10,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
 }
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 0.85rem;
+  }
+}

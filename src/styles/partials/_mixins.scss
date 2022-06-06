@@ -6,11 +6,28 @@
 @each $side, $sidePosition in $sides {
   @each $level, $value in $spacers {
     .m#{$side}-#{$level} {
-      @debug ".m#{$side}-#{$level}";
       margin-#{$sidePosition}:$value;
     }
+  }
+  @each $level, $value in $spacers {
     .p#{$side}-#{$level} {
       padding-#{$sidePosition}:$value;
+    }
+  }
+}
+@each $breakpoint, $sizeBreak in $breakpoints {
+  @media screen and (min-width: #{$sizeBreak}) {
+    @each $side, $sidePosition in $sides {
+      @each $level, $value in $spacers {
+        .m#{$side}-#{$breakpoint}-#{$level} {
+          margin-#{$sidePosition}:$value;
+        }
+      }
+      @each $level, $value in $spacers {
+        .p#{$side}-#{$breakpoint}-#{$level} {
+          padding-#{$sidePosition}:$value;
+        }
+      }
     }
   }
 }
@@ -41,3 +58,33 @@
     gap: #{$value};
   }
 }
+
+@each $breakpoint, $sizeBreak in $breakpoints {
+  @media screen and (min-width: #{$sizeBreak}) {
+    @each $level, $value in $spacers {
+      .p-#{$breakpoint}-#{$level} {
+        padding: #{$value};
+      }
+      .px-#{$breakpoint}-#{$level} {
+        padding-left: #{$value};
+        padding-right: #{$value};
+      }
+      .py-#{$breakpoint}-#{$level} {
+        padding-top: #{$value};
+        padding-bottom: #{$value};
+      }
+      .m-#{$breakpoint}-#{$level} {
+        margin: #{$value};
+      }
+      .mx-#{$breakpoint}-#{$level} {
+        margin-left: #{$value};
+        margin-right: #{$value};
+      }
+      .my-#{$breakpoint}-#{$level} {
+        margin-top: #{$value};
+        margin-bottom: #{$value};
+      }
+    }
+  }
+}
+
