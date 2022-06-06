@@ -1,23 +1,14 @@
-@media screen and (min-width: 768px) {
-  .card {
-    max-width: 120px;
-  }
-  .imgCard {
-    height: 150px;
-    border-radius: inherit;
-  }
-}
 .card {
   background: white;
   box-shadow: 0px 4px 10px 0px #a8a8a8;
   transition: transform 400ms;
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
   max-width: 600px;
 }
 .imgCard {
-  height: 80px;
+  height: 120px;
   border-radius: inherit;
 }
 .content {
@@ -37,4 +28,9 @@
   -webkit-box-orient: vertical;
 }
 
-
+@media screen and (min-width: 768px) {
+  .imgCard {
+    height: 250px;
+    border-radius: inherit;
+  }
+}

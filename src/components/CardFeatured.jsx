@@ -12,11 +12,11 @@ const CardFeatured = ({name, urlImage, alt, shortDescription, stock, price}) => 
         loading="lazy"
         alt={alt} />
       <div className={styles.separator} />
-      <div className={styles.content}>
+      <div className={`h-100 d-flex flex-column justify-evenly ${styles.content}`}>
         <div className="d-flex w-100 justify-between items-baseline">
           <h6 className='fw-bold'>{name}</h6>
           <p className='m-0 small'>In stock:
-            <span className='fw-medium ms-1'>
+            <span className='fw-bold ms-1'>
               {stock}
             </span>
           </p>

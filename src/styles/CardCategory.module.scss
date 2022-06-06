@@ -1,12 +1,3 @@
-@media screen and (min-width: 768px) {
-  .card {
-    width: auto;
-  }
-  .imgCard {
-    height: 200px;
-    border-radius: inherit;
-  }
-}
 .card {
   transition: transform 400ms;
   &:hover {
@@ -31,4 +22,18 @@
   color: white;
   width: 100%;
   text-align: center;
+}
+@media screen and (min-width: 563px) {
+  .imgCard {
+    height: 190px;
+    width: 190px;
+    border-radius: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .imgCard {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+  }
 }
