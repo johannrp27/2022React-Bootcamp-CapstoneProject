@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import styles from '../styles/GridFeatured.module.scss';
 import CardFeatured from '../components/CardFeatured';
 
-const GridFeatured = ({data}) => {
-  const featuredProducts = data.results;
+const GridFeatured = ({data: {results : featuredProducts }}) => {
   return (
     <>
       <h4 className='mb-4'>Discover the high-tier products</h4>

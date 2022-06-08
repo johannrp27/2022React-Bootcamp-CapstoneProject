@@ -4,8 +4,7 @@ import { Carousel } from 'react-responsive-carousel'
 import PropTypes from 'prop-types';
 import styles from '../styles/BannerSlider.module.scss'
 
-const BannerSlider = ({data}) => {
-  const banners = data.results;
+const BannerSlider = ({data: { results: banners }}) => {
   return (
     <Carousel
       className='mt-2'

@@ -10,15 +10,9 @@ import styles from '../styles/HomePage.module.scss'
 const HomePage = () => {
   return (
     <div className={`d-flex flex-column p-3 p-md-4 gap-5 ${styles.homepage}`}>
-      <div>
-        <BannerSlider data={bannersData} />
-      </div>
-      <div>
-        <GridCategories data={categoriesData} />
-      </div>
-      <div>
-        <GridFeatured data={featuredData} />
-      </div>
+      <BannerSlider data={bannersData} />
+      <GridCategories data={categoriesData} />
+      <GridFeatured data={featuredData} />
     </div>
   )
 }

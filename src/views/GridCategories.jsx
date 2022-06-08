@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import CardCategory from '../components/CardCategory';
 import styles from '../styles/GridCategories.module.scss';
 
-const GridCategories = ({data}) => {
-  const categories = data.results;
+const GridCategories = ({data: { results: categories }}) => {
   return (
     <>
       <h4 className='mb-4'>Our Available Categories</h4>
