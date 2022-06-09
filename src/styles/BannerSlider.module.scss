@@ -1,0 +1,12 @@
+.imgBanner {
+  filter: brightness(0.5);
+}
+.slide {
+  flex-direction: column;
+  color: #f0f0f0;
+}
+@media screen and (min-width: 576px) {
+  .slide {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,17 @@
+@import './partials/_variables.scss';
+@import './partials/_reboot.scss';
+@import './partials/_helpers.scss';
+@import './partials/_mixins.scss';
+
+body {
+  margin: 0;
+  font-family: #{$font-family-sans-serif};
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+}
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 0.85rem;
+  }
+}
