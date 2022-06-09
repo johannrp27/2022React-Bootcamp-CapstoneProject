@@ -1,3 +1,20 @@
+.container {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+$values-breakpoints: map-values($breakpoints);
+@for $i from 0 to length($breakpoints) {
+  @media (min-width: nth($values-breakpoints, $i+1)) {
+    .container {
+      max-width: nth($max-width-container, $i+1)
+    }
+  }
+}
+
 @each $level, $value in $font-sizes {
   .h#{$level}, h#{$level} {
     font-size: #{$value};
