@@ -5,7 +5,7 @@ import styles from '../styles/CardFeatured.module.scss';
 const CardFeatured = ({name, urlImage, alt, shortDescription, stock, price}) => {
 
   return (
-    <div className={`${styles.card} d-flex items-center rounded-lg`}>
+    <div className={`${styles.card} d-flex items-center rounded-lg relative`}>
       <img
         className={`m-2 ${styles.imgCard}`}
         src={urlImage}
@@ -13,17 +13,15 @@ const CardFeatured = ({name, urlImage, alt, shortDescription, stock, price}) => 
         alt={alt} />
       <div className={styles.separator} />
       <div className={`h-100 d-flex flex-column justify-evenly ${styles.content}`}>
-        <div className="d-flex w-100 justify-between items-baseline">
-          <h6 className='fw-bold'>{name}</h6>
-          <p className='m-0 small'>In stock:
-            <span className='fw-bold ms-1'>
-              {stock}
-            </span>
-          </p>
-        </div>
+        <h6 className='fw-bold mt-2'>{name}</h6>
         <p className={`small ${styles.shortDesc}`}>{shortDescription}</p>
         <p className='m-0 text-end fw-medium'>${price}</p>
       </div>
+      <p className={`m-0 small absolute ${styles.stock}`}>In stock:
+        <span className='fw-bold ms-1'>
+          {stock}
+        </span>
+      </p>
     </div>
   )
 }

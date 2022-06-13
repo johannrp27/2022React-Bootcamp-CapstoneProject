@@ -14,25 +14,16 @@ const ProductList = () => {
       <Sidebar
         setFilters={setFilters} />
       <div className='text-center'>
-        {
-          isLoading && (
-            <div className={styles.loader} />
-          )
-        }
-        {
-          !isLoading && filteredProducts.length === 0 && (
-            <p>No products to show</p>
-          )
-        }
-        {
-          !isLoading && filteredProducts.length > 0 &&
-            <>
-              <GridProducts
-                filters={filters}
-                products={filteredProducts}
+        { isLoading && (<div className={styles.loader} />) }
+        { !isLoading && filteredProducts.length === 0 && (<p>No products to show</p>)}
+        { !isLoading && filteredProducts.length > 0 &&
+          <div className='text-start'>
+            <GridProducts
+              filters={filters}
+              products={filteredProducts}
               />
-              <Pagination />
-            </>
+            <Pagination />
+          </div>
         }
       </div>
     </div>
