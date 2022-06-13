@@ -5,8 +5,6 @@ module.exports = {
     'react-app/jest',
   ],
   env: {
-    browser: true,
-    es2021: true,
     node: true,
   },
   parserOptions: {
