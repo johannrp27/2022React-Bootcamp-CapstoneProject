@@ -25,7 +25,7 @@ const Home = () => {
               <div>
                 <h4 className='mb-4'>Discover the high-tier products</h4>
                 <GridProducts
-                  products={featuredData.results} />
+                  products={featuredData.results.slice(0, 6)} />
                 <button
                   className="btn mt-4"
                   onClick={() => setCurrentView('ProductList')}>View all products</button>
