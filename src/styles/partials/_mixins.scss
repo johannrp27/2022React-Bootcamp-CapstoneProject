@@ -5,6 +5,14 @@
   margin-right: auto;
   margin-left: auto;
 }
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
 $values-breakpoints: map-values($breakpoints);
 @for $i from 0 to length($breakpoints) {
