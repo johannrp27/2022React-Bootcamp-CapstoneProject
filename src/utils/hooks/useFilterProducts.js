@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react"
 import mockResponse from '../../assets/mocks/en-us/products.json'
 
