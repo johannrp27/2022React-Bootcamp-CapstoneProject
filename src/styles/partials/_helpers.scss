@@ -11,6 +11,9 @@
 .d-grid{
   display: grid;
 }
+.d-inline-block {
+  display: inline-block;
+}
 
 // Align
 .text-center {
@@ -94,4 +97,9 @@
 }
 .absolute {
   position: absolute;
+}
+
+//Cursor
+.cursor-pointer {
+  cursor: pointer;
 }

@@ -17,6 +17,8 @@ $breakpoints: (
   xl: $breakpoint-xl,
 );
 
+$max-width-container:(540px, 720px, 960px, 1140px);
+
 // Margin and padding spacers
 $spacer: 1rem;
 $spacer-1: $spacer * .25;

@@ -1,10 +1,11 @@
 import React from 'react'
-import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
+import bannersData from '../assets/mocks/en-us/featured-banners.json'
 import { Carousel } from 'react-responsive-carousel'
 import PropTypes from 'prop-types';
 import styles from '../styles/BannerSlider.module.scss'
+import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
 
-const BannerSlider = ({data: { results: banners }}) => {
+const BannerSlider = () => {
   return (
     <Carousel
       className='mt-2'
@@ -18,7 +19,7 @@ const BannerSlider = ({data: { results: banners }}) => {
       emulateTouch={true}
     >
       {
-        banners.map(({id, data}) => (
+        bannersData.results.map(({id, data}) => (
           <div
             className={`d-flex gap-4 items-center
             justify-center relative rounded-lg mx-0 mx-lg-4 ${styles.slide}`}
