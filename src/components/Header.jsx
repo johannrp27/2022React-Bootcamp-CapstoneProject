@@ -1,19 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from '../styles/Header.module.scss';
 import logo from '../assets/images/LogoSingle.svg'
+import { useNavigate } from 'react-router-dom';
 
-const Header = ({setCurrentView}) => {
-  const handleViewChange = (page) => {
-    setCurrentView(page);
-    // TODO Add Scroll to
+const Header = () => {
+  let navigate = useNavigate();
+
+  function goHome() {
+    navigate("/", { replace: true });
   }
+
   return (
-    <nav className={`d-flex items-center p-4 gap-4 ${styles.nav}`}>
+    <nav className={`d-flex items-center p-4 gap-4 mb-4 ${styles.nav}`}>
       <div
-        onClick={() => handleViewChange('Home')}
+        onClick={goHome}
         className={`${styles.logo} d-flex items-center fw-bold gap-3 cursor-pointer`}>
         <img
           className={styles.logo_img}
@@ -30,9 +32,5 @@ const Header = ({setCurrentView}) => {
     </nav>
   );
 };
-
-Header.propTypes = {
-  setCurrentView: PropTypes.func,
-}
 
 export default Header;
