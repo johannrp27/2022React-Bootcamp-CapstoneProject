@@ -2,26 +2,35 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import styles from '../styles/CardFeatured.module.scss';
 
-const CardFeatured = ({name, urlImage, alt, shortDescription, stock, price}) => {
+const CardFeatured = ({name, sku, urlImage, alt, shortDescription, stock, price}) => {
+  const descriptionTrimmed = shortDescription?.slice(0, 80) + '...';
+  const productName = name.split(' ').splice(0, 3).join(' ');
 
+  const handleProductClick = () => {
+    console.log(sku);
+  }
   return (
-    <div className={`${styles.card} d-flex items-center rounded-lg relative`}>
+    <div className={styles.card}>
+      <ul className={styles.ul}>
+        <li>
+          <p className='m-0 fw-bold'>Stock {stock}</p>
+        </li>
+        <li>
+          <p className='m-0 fw-bold'>${price}</p>
+        </li>
+      </ul>
       <img
-        className={`m-2 ${styles.imgCard}`}
+        className={styles.imgCard}
         src={urlImage}
         loading="lazy"
         alt={alt} />
-      <div className={styles.separator} />
-      <div className={`h-100 d-flex flex-column justify-evenly ${styles.content}`}>
-        <h6 className='fw-bold mt-2'>{name}</h6>
-        <p className={`small ${styles.shortDesc}`}>{shortDescription}</p>
-        <p className='m-0 text-end fw-medium'>${price}</p>
+      <div className={styles.conText}>
+        <h4 className='mb-3'>{productName}</h4>
+        <p className={styles.shortDesc}>
+          {descriptionTrimmed}
+          <button onClick={handleProductClick}>Add to cart</button>
+        </p>
       </div>
-      <p className={`m-0 small absolute ${styles.stock}`}>In stock:
-        <span className='fw-bold ms-1'>
-          {stock}
-        </span>
-      </p>
     </div>
   )
 }
@@ -29,6 +38,7 @@ const CardFeatured = ({name, urlImage, alt, shortDescription, stock, price}) => 
 CardFeatured.propTypes = {
   name: PropTypes.string,
   urlImage: PropTypes.string,
+  sku: PropTypes.string,
   alt: PropTypes.string,
   shortDescription: PropTypes.string,
   stock: PropTypes.number,

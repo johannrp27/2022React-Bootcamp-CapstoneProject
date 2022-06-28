@@ -1,27 +1,111 @@
 .card {
-  background: white;
-  box-shadow: 0px 4px 10px 0px #a8a8a8;
-  transition: transform 400ms;
-  &:hover {
-    transform: scale(1.02);
-  }
-  max-width: 600px;
+  width: 300px;
+  height: 390px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .25s ease;
+  backface-visibility: hidden;
 }
-.stock {
-  top: 20px;
+
+.card:after {
+  width: 100%;
+  content: '';
+  left: 0px;
+  bottom: 0px;
+  height: 150px;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  z-index: 20;
+  transition: all .25s ease;
+}
+.card img {
+  height: 100%;
+  z-index: 10;
+  transition: all .25s ease;
+  filter: brightness(0.8);
+}
+
+.card .conText {
+  z-index: 30;
+  position: absolute;
+  bottom: 0px;
+  color: #fff;
+  padding: 20px;
+  padding-bottom: 50px;
+  transition: padding 200ms;
+}
+
+
+.card .conText p {
+  font-size: .8rem;
+  opacity: 0;
+  margin-bottom: -170px;
+  transition: all .25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.card .conText p button {
+  padding: 7px 17px;
+  border-radius: 12px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  margin-top: 10px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: all .25s ease;
+  font-size:.75rem;
+  outline: none;
+}
+
+
+.ul {
+  position: absolute;
   right: 20px;
+  display: flex;
+  gap:10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 40;
+  border-radius: 14px;
+  top: 10px;
+  opacity: 0;
+  transform: translate(100%);
+  transition: all .25s ease;
 }
-.imgCard {
-  height: 120px;
+
+.ul li {
+  background: #fff;
+  list-style: none;
+  width: 120%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .7;
+  transition: all .25s ease;
+  backface-visibility: hidden;
   border-radius: inherit;
 }
-.content {
-  padding: 1rem;
-  flex-grow: 1;
+
+.ul li:hover {
+  opacity: 1;
+  transform: translate(-7px, -4px);
+  border-radius: 6px;
 }
-.separator {
-  border: 1px solid rgb(243, 243, 243);
-  height: 85%;
+
+.ul li p {
+  font-size: 0.9rem;
+  color: #000;
 }
 
 .shortDesc {
@@ -30,6 +114,59 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: scale(.9);
+  }
+  .card:hover:after {
+    height: 280px;
+  }
+  .card:hover .conText p {
+    margin-bottom: 0px;
+    opacity: 1;
+  }
+  .card:hover img {
+    transform: scale(1.25);
+  }
+  .card:hover .ul {
+    transform: translate(0);
+    opacity: 1;
+  }
+  .card:hover .conText {
+    padding-bottom: 20px;
+  }
+  .card .conText p button:hover {
+    background: #fff;
+    color: #000;
+  }
+}
+@media (hover: none) {
+  .card {
+    transform: scale(.9);
+  }
+  .card:after {
+    height: 280px;
+  }
+  .card .conText p {
+    margin-bottom: 0px;
+    opacity: 1;
+  }
+  .card img {
+    transform: scale(1.25);
+  }
+  .card .ul {
+    transform: translate(0);
+    opacity: 1;
+  }
+  .card .conText {
+    padding-bottom: 20px;
+  }
+  .card .conText p button {
+    background: #fff;
+    color: #000;
+  }
 }
 
 @media screen and (min-width: 768px) {
