@@ -2,7 +2,6 @@ import React from 'react'
 import GridCategories from '../views/GridCategories'
 import GridProducts from '../views/GridProducts'
 import BannerSlider from './BannerSlider'
-import featuredData from '../assets/mocks/en-us/featured-products.json'
 import PropTypes from 'prop-types'
 
 const HomeContainer = ({setCurrentView}) => {
@@ -12,8 +11,7 @@ const HomeContainer = ({setCurrentView}) => {
       <GridCategories />
       <div>
         <h4 className='mb-4'>Discover the high-tier products</h4>
-        <GridProducts
-          products={featuredData.results.slice(0, 6)} />
+        <GridProducts/>
         <button
           className="btn mt-4"
           onClick={() => setCurrentView('ProductList')}>View all products</button>
