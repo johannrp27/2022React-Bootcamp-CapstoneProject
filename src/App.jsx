@@ -1,14 +1,27 @@
 import React from 'react';
 import Home from './views/Home';
-import { useFeaturedBanners } from './utils/hooks/useFeaturedBanners';
+import { Route, Routes } from 'react-router-dom';
+import ProductList from './views/ProductList';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
-  // eslint-disable-next-line no-unused-vars
-  const { data, isLoading } = useFeaturedBanners();
 
   return (
     <div className="App">
-      <Home />
+      <Header />
+      <Routes>
+        <Route
+          path="/home"
+          element={<Home />} />
+        <Route
+          path="/products"
+          element={<ProductList />} />
+        <Route
+          path="/"
+          element={<Home />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
