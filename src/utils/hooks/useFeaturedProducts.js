@@ -3,7 +3,7 @@ import { API_BASE_URL } from '../constants';
 import { useLatestAPI } from "./useLatestAPI";
 import axios from 'axios'
 
-export const useProducts = () => {
+export const useFeaturedProducts = () => {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
 
   const [products, setProducts] = useState([])
@@ -12,9 +12,13 @@ export const useProducts = () => {
   const getProducts = async (controller) => {
     try {
       const { data } = await axios.get(
-        `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
-          '[[at(document.type, "product")]]'
-        )}&lang=en-us&pageSize=12`,
+        `${API_BASE_URL}/documents/search?ref=${
+              apiRef
+            }&q=${
+              encodeURIComponent('[[at(document.type, "product")]]')
+            }&q=${
+              encodeURIComponent('[[at(document.tags, ["Featured"])]]')
+            }&lang=en-us&pageSize=16`,
         {
           signal: controller.signal,
         }

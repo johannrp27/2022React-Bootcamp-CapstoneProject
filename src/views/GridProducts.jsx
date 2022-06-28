@@ -1,42 +1,30 @@
 import React from 'react'
 import styles from '../styles/GridProducts.module.scss';
 import CardFeatured from '../components/CardFeatured';
-import { useProducts } from '../utils/hooks/useProducts';
+import PropTypes from 'prop-types';
 
-const GridProducts = () => {
-  const { products, isLoading } = useProducts();
-  console.log(products);
+const GridProducts = ({products}) => {
   return (
-    <>
+    <div className={`d-grid ${styles.grid} gap-3`}>
       {
-        isLoading && (
-          <div>Loading</div>
-        )
+        products.map(({data}) => (
+          <CardFeatured
+            sku={data.sku}
+            urlImage={data.mainimage.url}
+            alt={data.mainimage.alt}
+            name={data.name}
+            price={data.price}
+            shortDescription={data.short_description}
+            stock={data.stock}
+            key={data.sku} />
+        ))
       }
-      {
-        !isLoading && (
-          <div className={`d-grid ${styles.grid} gap-3`}>
-            {
-              products.map(({data}) => (
-                <CardFeatured
-                  sku={data.sku}
-                  urlImage={data.mainimage.url}
-                  alt={data.mainimage.alt}
-                  name={data.name}
-                  price={data.price}
-                  shortDescription={data.short_description}
-                  stock={data.stock}
-                  key={data.sku} />
-              ))
-            }
-          </div>
-        )
-      }
-    </>
+    </div>
   )
 }
 
 GridProducts.propTypes = {
+  products: PropTypes.array,
 }
 
 export default GridProducts
