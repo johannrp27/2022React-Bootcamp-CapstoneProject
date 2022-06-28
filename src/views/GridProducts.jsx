@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../styles/GridProducts.module.scss';
-import CardFeatured from '../components/CardFeatured';
+import ProductCard from '../components/ProductCard';
 import PropTypes from 'prop-types';
 
 const GridProducts = ({products}) => {
@@ -8,7 +8,7 @@ const GridProducts = ({products}) => {
     <div className={`d-grid ${styles.grid} gap-3`}>
       {
         products.map(({id, data}) => (
-          <CardFeatured
+          <ProductCard
             id={id}
             sku={data.sku}
             urlImage={data.mainimage.url}
