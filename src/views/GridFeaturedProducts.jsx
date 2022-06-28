@@ -5,7 +5,6 @@ import { useFeaturedProducts } from '../utils/hooks/useFeaturedProducts';
 
 const GridFeaturedProducts = () => {
   const { products, isLoading } = useFeaturedProducts();
-
   return (
     <>
       {
@@ -17,8 +16,9 @@ const GridFeaturedProducts = () => {
         !isLoading && (
           <div className={`d-grid ${styles.grid} gap-3`}>
             {
-              products.map(({data}) => (
+              products.map(({id, data}) => (
                 <CardFeatured
+                  id={id}
                   sku={data.sku}
                   urlImage={data.mainimage.url}
                   alt={data.mainimage.alt}
