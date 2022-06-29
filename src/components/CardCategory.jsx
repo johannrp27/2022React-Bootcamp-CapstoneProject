@@ -1,21 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types';
-import styles from '../styles/CardCategory.module.scss';
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import styles from '../styles/CardCategory.module.scss'
 
-const CardCategory = ({name, urlImage, alt}) => {
+const CardCategory = ({name, urlImage, alt, slug}) => {
   return (
-    <div
-      className={`${styles.card} d-flex flex-column items-center
-    justify-center rounded-lg relative m-3`}>
-      <img
-        className={`${styles.imgCard}`}
-        src={urlImage}
-        loading="lazy"
-        alt={alt} />
-      <div className={styles.content}>
-        {name}
+    <Link to={`/productlist?slug=${slug}`} >
+      <div
+        className={`${styles.card} d-flex flex-column items-center
+        justify-center rounded-lg relative m-3`}>
+        <img
+          className={`${styles.imgCard}`}
+          src={urlImage}
+          loading="lazy"
+          alt={alt} />
+        <div className={styles.content}>
+          {name}
+        </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
@@ -23,5 +26,6 @@ CardCategory.propTypes = {
   name: PropTypes.string,
   urlImage: PropTypes.string,
   alt: PropTypes.string,
+  slug: PropTypes.string,
 }
 export default CardCategory
