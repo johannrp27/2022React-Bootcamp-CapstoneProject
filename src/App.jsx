@@ -5,6 +5,7 @@ import ProductList from './views/ProductList';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProductDetail from './views/ProductDetail';
+import SearchResults from './views/SearchResults';
 
 function App() {
 
@@ -21,6 +22,10 @@ function App() {
         <Route
           path="/products/:id"
           element={<ProductDetail />} />
+        <Route
+          path="/search"
+          element={<SearchResults />}
+        />
         <Route
           path="/"
           element={<Home />} />

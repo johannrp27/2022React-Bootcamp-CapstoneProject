@@ -1,6 +1,6 @@
 .nav {
   background-color: #f4f4f4;
-  // box-shadow: 0 0 12px 5px #cdcdcd;
+  box-shadow: 0 0 20px 0px #cecece;
 }
 .logo {
   flex-grow: 1;
@@ -15,7 +15,11 @@
   border: none;
   background: inherit;
   color: #6d6e71;
+  &:focus {
+    outline: none;
+  }
 }
+
 .search {
   border: none;
   border-bottom: 1px solid #ababab;

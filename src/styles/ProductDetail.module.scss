@@ -49,11 +49,18 @@
   background-color: #ededed;
   border-radius: 4px;
 }
+.groupSelector {
+  display: flex;
+  align-items: center;
+}
 
 @media screen and (min-width: 768px) {
   .grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
+  }
+  .groupSelector {
+    display: inline-flex;
   }
 }
 input::-webkit-outer-spin-button,

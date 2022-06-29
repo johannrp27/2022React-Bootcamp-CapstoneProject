@@ -44,8 +44,8 @@ const Detail = ({data}) => {
               Before: ${data.price*120/100}</p>
             <h6>Today: ${data.price}</h6>
           </div>
-          <p className='mb-5'>{data.description[0].text}</p>
-          <div className="tags">
+          <p className='mb-3 mb-md-5'>{data.description[0].text}</p>
+          <div className="tags mb-4">
             <h6 className='text-end'>Tags</h6>
             <div className="d-flex justify-end gap-3">
               {
@@ -59,7 +59,7 @@ const Detail = ({data}) => {
               }
             </div>
           </div>
-          <div className="d-inline-flex flex-column gap-2">
+          <div className={`flex-column gap-2 ${styles.groupSelector}`}>
             <div className={styles.selector}>
               <button
                 className={`btn ${styles.minus}`}

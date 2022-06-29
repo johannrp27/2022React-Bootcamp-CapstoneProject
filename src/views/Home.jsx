@@ -14,7 +14,7 @@ const Home = () => {
   }
 
   return (
-    <div className={'d-flex flex-column px-md-4 py-0 gap-5'}>
+    <div className={'d-flex flex-column px-md-4 px-3 py-0 gap-5'}>
       <BannerSlider />
       <GridCategories />
       <div>
