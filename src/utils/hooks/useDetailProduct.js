@@ -27,7 +27,11 @@ export function useDetailProduct(productId) {
           }
         );
         const { results: [result] } = await response.json();
-        setProductDetail({ data: result.data, isLoading: false, isEmpty: false });
+        setProductDetail({
+          data: {...result.data, tags: result.tags},
+          isLoading: false,
+          isEmpty: false,
+        });
       } catch (err) {
         setProductDetail({ data: {}, isLoading: false, isEmpty:true });
         console.error(err);

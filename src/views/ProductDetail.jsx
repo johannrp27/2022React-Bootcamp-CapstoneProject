@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
+import Detail from '../components/Detail'
 import { useDetailProduct } from '../utils/hooks/useDetailProduct'
 
 const ProductDetail = () => {
@@ -16,9 +17,7 @@ const ProductDetail = () => {
       }
       {
         Object.keys(data).length > 0 && (
-          <div>
-            hey
-          </div>
+          <Detail data={data}/>
         )
       }
     </>
