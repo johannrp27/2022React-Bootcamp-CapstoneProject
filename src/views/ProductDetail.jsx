@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import Detail from '../components/Detail'
+import GeneralDetail from '../components/GeneralDetail'
 import { useDetailProduct } from '../utils/hooks/useDetailProduct'
 
 const ProductDetail = () => {
@@ -20,7 +20,7 @@ const ProductDetail = () => {
       }
       {
         Object.keys(data).length > 0 && (
-          <Detail data={data}/>
+          <GeneralDetail data={data}/>
         )
       }
     </>
