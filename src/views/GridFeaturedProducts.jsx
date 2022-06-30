@@ -8,12 +8,13 @@ const GridFeaturedProducts = () => {
   return (
     <>
       {
-        isLoading && (
-          <div>Loading</div>
+        isLoading
+        ? (
+          <div className="d-flex justify-center">
+            <div className='loader' />
+          </div>
         )
-      }
-      {
-        !isLoading && (
+        :(
           <div className={`d-grid ${styles.grid} gap-3`}>
             {
               products.map(({id, data}) => (

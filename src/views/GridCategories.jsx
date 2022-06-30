@@ -12,16 +12,18 @@ const GridCategories = () => {
     <>
       {
         isLoading && (
-          <div>Loading</div>
+          <div className="d-flex justify-center">
+            <div className='loader' />
+          </div>
         )
       }
       {
-        categories.length <= 0 && (
+        !isLoading && categories.length <= 0 && (
           <div>No data to show</div>
         )
       }
       {
-        !isLoading &&
+         categories.length > 0 &&
         (<>
           <h4 className='mb-4'>Our Available Categories</h4>
           <div className={`d-grid gap-2 ${styles.grid}`}>

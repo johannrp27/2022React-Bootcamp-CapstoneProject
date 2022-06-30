@@ -10,7 +10,10 @@ const ProductDetail = () => {
   return (
     <>
       {
-        isLoading && <p>Loading...</p>
+        isLoading && (
+          <div className="d-flex justify-center">
+            <div className='loader' />
+          </div>)
       }
       {
         !isLoading && isEmpty && <p>Sorry, product not found</p>

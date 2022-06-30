@@ -26,7 +26,7 @@ const ProductList = () => {
         isAnyActiveFilter={isAnyActiveFilter}
         isLoading={isLoadingFilters} />
       <div className='text-center'>
-        { isLoadingProducts && (<div className={styles.loader} />) }
+        { isLoadingProducts && (<div className='loader' />) }
         { !isLoadingProducts && filteredProducts.length === 0 && (<p>No products to show</p>)}
         { !isLoadingProducts && filteredProducts.length > 0 &&
           <div className='text-start'>

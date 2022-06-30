@@ -23,7 +23,10 @@ const Sidebar = ({filters, isAnyActiveFilter, setFilters, isLoading, categories}
   return (
     <div className={`d-flex flex-column gap-2 ${styles.sidebar}`}>
       {
-        isLoading && (<p> Loading </p>)
+        isLoading && (
+          <div className="d-flex justify-center">
+            <div className='loader' />
+          </div>)
       }
       {
         categories && categories.map(({id, slugs, data}) => (

@@ -11,12 +11,13 @@ const BannerSlider = () => {
   return (
     <>
       {
-        isLoading && (
-          <div>Loading</div>
+        isLoading
+        ? (
+          <div className="d-flex justify-center">
+            <div className='loader' />
+          </div>
         )
-      }
-      {
-        !isLoading && (
+        :(
           <Carousel
             className='mt-2'
             autoPlay={false}
