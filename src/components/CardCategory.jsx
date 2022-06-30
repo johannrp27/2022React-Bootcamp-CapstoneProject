@@ -5,12 +5,12 @@ import styles from '../styles/CardCategory.module.scss'
 
 const CardCategory = ({name, urlImage, alt, slug}) => {
   return (
-    <Link to={`/productlist?slug=${slug}`} >
+    <Link to={`/products?category=${slug}`} >
       <div
         className={`${styles.card} d-flex flex-column items-center
         justify-center rounded-lg relative m-3`}>
         <img
-          className={`${styles.imgCard}`}
+          className={styles.imgCard}
           src={urlImage}
           loading="lazy"
           alt={alt} />

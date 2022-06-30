@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useGridCategories } from "./useGridCategories";
 import { useProducts } from "./useProducts";
 
-export const useFilters = () => {
+export const useFilters = (queryParamCategory) => {
   const initialFilters = {
     'bed--bath' : false,
     'lighting' : false,
@@ -10,6 +10,11 @@ export const useFilters = () => {
     'furniture': false,
     'decorate': false,
   }
+  if(queryParamCategory &&
+    Object.prototype.hasOwnProperty.call(initialFilters, queryParamCategory)) {
+    initialFilters[queryParamCategory] = true;
+  }
+
   const { categories, isLoading: isLoadingFilters } = useGridCategories()
   const { products, isLoading: isLoadingProducts } = useProducts();
 
@@ -24,20 +29,16 @@ export const useFilters = () => {
     if(!isAnyActiveFilter()) {
       return products
     } else {
-      return products.filter(({data}) => {
+      const t = products.filter(({data}) => {
         return filters[data.category.slug];
       })
+      return t;
     }
   }
   useEffect(() => {
-    setFilteredProducts(products)
-  }, [products])
-
-
-  useEffect(() => {
     const prods = filterProducts()
     setFilteredProducts(prods);
-  }, [filters])
+  }, [filters, products, isLoadingProducts])
 
 
   return {

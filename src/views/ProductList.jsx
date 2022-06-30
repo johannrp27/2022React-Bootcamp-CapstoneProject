@@ -4,9 +4,11 @@ import GridProducts from './GridProducts'
 import Pagination from '../components/Pagination'
 import styles from '../styles/ProductList.module.scss'
 import { useFilters } from '../utils/hooks/useFilters';
-
+import { useSearchParams } from 'react-router-dom'
 
 const ProductList = () => {
+  const [searchParams] = useSearchParams();
+
   const {
     filters,
     setFilters,
@@ -15,7 +17,7 @@ const ProductList = () => {
     isLoadingProducts,
     filteredProducts,
     isAnyActiveFilter,
-  } = useFilters()
+  } = useFilters(searchParams.get('category'))
 
   return (
     <div className={`${styles.layout} d-grid gap-3 mx-4`}>
