@@ -14,6 +14,26 @@
   cursor: pointer;
 }
 
+.loader {
+  display: inline-block;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 0.25rem solid black;
+  border-right-color: transparent;
+  animation-duration: .75s;
+  animation-name: spinner-border;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spinner-border {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 $values-breakpoints: map-values($breakpoints);
 @for $i from 0 to length($breakpoints) {
   @media (min-width: nth($values-breakpoints, $i+1)) {
