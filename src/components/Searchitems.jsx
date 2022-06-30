@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import ProductCard from './ProductCard'
 import styles from '../styles/Search.module.scss'
 
-const Searchitems = ({results}) => {
+const Searchitems = ({children, results}) => {
+
   return (
     <>
       <h5 className='mb-4'>Results:</h5>
@@ -24,10 +25,12 @@ const Searchitems = ({results}) => {
           ))
         }
       </div>
+      {children}
     </>
   )
 }
 Searchitems.propTypes = {
   results: PropTypes.array,
+  children: PropTypes.element,
 }
 export default Searchitems

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useGridCategories } from "./useGridCategories";
 import { useProducts } from "./useProducts";
 
-export const useFilters = (queryParamCategory) => {
+export const useFilters = (queryParamCategory, currentPage) => {
   const initialFilters = {
     'bed--bath' : false,
     'lighting' : false,
@@ -16,7 +16,7 @@ export const useFilters = (queryParamCategory) => {
   }
 
   const { categories, isLoading: isLoadingFilters } = useGridCategories()
-  const { products, isLoading: isLoadingProducts } = useProducts();
+  const { products, isLoading: isLoadingProducts, totalPages } = useProducts(currentPage);
 
   const [filters, setFilters] = useState(initialFilters)
   const [filteredProducts, setFilteredProducts] = useState(products)
@@ -49,6 +49,7 @@ export const useFilters = (queryParamCategory) => {
     filters,
     setFilters,
     isAnyActiveFilter,
+    totalPages,
   }
 
 }

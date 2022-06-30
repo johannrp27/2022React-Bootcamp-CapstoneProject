@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from '../components/Sidebar'
 import GridProducts from './GridProducts'
 import Pagination from '../components/Pagination'
@@ -8,16 +8,19 @@ import { useSearchParams } from 'react-router-dom'
 
 const ProductList = () => {
   const [searchParams] = useSearchParams();
+  const [currentPage, setCurrentPage] = useState(1);
 
   const {
     filters,
     setFilters,
     categories,
+    totalPages,
     isLoadingFilters,
     isLoadingProducts,
     filteredProducts,
     isAnyActiveFilter,
-  } = useFilters(searchParams.get('category'))
+  } = useFilters(searchParams.get('category'), currentPage)
+
 
   return (
     <div className={`${styles.layout} d-grid gap-3 mx-4`}>
@@ -35,7 +38,11 @@ const ProductList = () => {
             <GridProducts
               products={filteredProducts}
               />
-            <Pagination />
+            <Pagination
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              totalPages={totalPages}
+            />
           </div>
         }
       </div>

@@ -13,7 +13,10 @@
   border-radius: 6px;
   cursor: pointer;
 }
-
+.active {
+  background: #6fb642;
+  color: white;
+}
 .loader {
   display: inline-block;
   text-align: center;

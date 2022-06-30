@@ -1,16 +1,25 @@
 import React from 'react'
 import styles from '../styles/Pagination.module.scss'
+import PropTypes from 'prop-types';
 
-const Pagination = () => {
-
+const Pagination = ({totalPages, currentPage, setCurrentPage}) => {
   return (
     <div className={`d-flex my-4 ${styles.pagination}`}>
-      <button className="">1</button>
-      <button className="">2</button>
-      <button className="">3</button>
-      <button className="">4</button>
+      {
+        [...Array(totalPages)].map((val, i) => (
+          <button
+            key={i+1}
+            onClick={() => setCurrentPage(i+1)}
+            className={`${i+1 === currentPage ?'active':''} cursor-pointer`}>{i+1}</button>
+        ))
+      }
     </div>
   )
 }
 
+Pagination.propTypes = {
+  totalPages: PropTypes.number,
+  currentPage: PropTypes.number,
+  setCurrentPage: PropTypes.func,
+}
 export default Pagination
