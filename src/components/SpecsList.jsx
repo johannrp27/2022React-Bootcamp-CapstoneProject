@@ -25,7 +25,7 @@ const SpecsList = ({specs}) => {
 }
 
 SpecsList.propTypes = {
-  specs: PropTypes.object,
+  specs: PropTypes.array,
 }
 
 export default SpecsList
