@@ -1,33 +1,34 @@
-import React, {useState} from 'react';
+import React from 'react'
+import BannerSlider from '../components/BannerSlider'
+import GridCategories from './GridCategories'
+import { useNavigate } from 'react-router-dom'
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ProductList from './ProductList';
-
-import styles from '../styles/Home.module.scss'
-import HomeContainer from '../components/HomeContainer';
+import PropTypes from 'prop-types'
+import GridFeaturedProducts from './GridFeaturedProducts'
 
 const Home = () => {
-  const [currentView, setCurrentView] = useState('Home')
+  let navigate = useNavigate();
+
+  function viewAll() {
+    navigate("/products", { replace: true });
+  }
 
   return (
-    <>
-      <Header setCurrentView={setCurrentView} />
-      <div className={styles.home}>
-        {
-          currentView === 'Home' && (
-            <HomeContainer />
-          )
-        }
-        {
-          currentView === 'ProductList' && (
-            <ProductList />
-          )
-        }
+    <div className={'d-flex flex-column px-md-4 px-3 py-0 gap-5'}>
+      <BannerSlider />
+      <GridCategories />
+      <div>
+        <h4 className='mb-4'>Discover the high-tier products</h4>
+        <GridFeaturedProducts />
+        <button
+          className="btn mt-4"
+          onClick={viewAll}>View all products</button>
       </div>
-      <Footer />
-    </>
-  );
-};
+    </div>
+  )
+}
+Home.propTypes = {
+  setCurrentView: PropTypes.func,
+}
 
-export default Home;
+export default Home

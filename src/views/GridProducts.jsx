@@ -1,14 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types';
 import styles from '../styles/GridProducts.module.scss';
-import CardFeatured from '../components/CardFeatured';
+import ProductCard from '../components/ProductCard';
+import PropTypes from 'prop-types';
 
 const GridProducts = ({products}) => {
   return (
     <div className={`d-grid ${styles.grid} gap-3`}>
       {
-        products.map(({data}) => (
-          <CardFeatured
+        products.map(({id, data}) => (
+          <ProductCard
+            id={id}
+            sku={data.sku}
             urlImage={data.mainimage.url}
             alt={data.mainimage.alt}
             name={data.name}
@@ -23,7 +25,7 @@ const GridProducts = ({products}) => {
 }
 
 GridProducts.propTypes = {
-  products: PropTypes.array.isRequired,
+  products: PropTypes.array,
 }
 
 export default GridProducts

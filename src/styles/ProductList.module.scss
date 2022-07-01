@@ -1,25 +1,6 @@
 .layout {
   grid-template-columns: 100%;
 }
-.loader {
-  display: inline-block;
-  text-align: center;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 0.25rem solid black;
-  border-right-color: transparent;
-  animation-duration: .75s;
-  animation-name: spinner-border;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes spinner-border {
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 @media screen and (min-width: 768px) {
   .layout {

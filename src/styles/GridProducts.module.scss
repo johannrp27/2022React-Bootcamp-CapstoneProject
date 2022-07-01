@@ -1,5 +1,6 @@
 .grid {
   grid-template-columns: 1fr;
+  justify-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -9,6 +10,6 @@
 }
 @media screen and (min-width: 1200px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
