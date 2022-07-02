@@ -1,6 +1,7 @@
 .card {
   width: 300px;
   height: 390px;
+  border: none;
   border-radius: 30px;
   overflow: hidden;
   position: relative;
@@ -10,9 +11,12 @@
   cursor: pointer;
   transition: all .25s ease;
   backface-visibility: hidden;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .card:after {
+  border: none;
   width: 100%;
   content: '';
   left: 0px;
@@ -51,19 +55,22 @@
   justify-content: flex-end;
   flex-direction: column;
 }
-
-.card .conText p button {
+.btnAdd {
   padding: 7px 17px;
-  border-radius: 12px;
-  background: transparent;
-  border: 2px solid #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background: #57bfff;
+  border: none;
   color: #fff;
-  margin-top: 10px;
+  font-weight: bold;
+  width: 100%;
+  // margin-top: 10px;
   margin-left: auto;
   cursor: pointer;
   transition: all .25s ease;
   font-size:.75rem;
   outline: none;
+  top: 0;
 }
 
 
@@ -117,55 +124,46 @@
 }
 
 @media (hover: hover) {
-  .card:hover {
-    transform: scale(.9);
-  }
-  .card:hover:after {
-    height: 280px;
-  }
-  .card:hover .conText p {
-    margin-bottom: 0px;
-    opacity: 1;
-  }
-  .card:hover img {
-    transform: scale(1.25);
-  }
-  .card:hover .ul {
-    transform: translate(0);
-    opacity: 1;
-  }
-  .card:hover .conText {
-    padding-bottom: 20px;
-  }
-  .card .conText p button:hover {
-    background: #fff;
-    color: #000;
+  .containerCard:hover {
+    .card:after {
+      height: 280px;
+      border: none;
+    }
+    .card .conText p {
+      margin-bottom: 0px;
+      opacity: 1;
+    }
+    .card img {
+      transform: scale(1.25);
+    }
+    .card .ul {
+      transform: translate(0);
+      opacity: 1;
+    }
+    .card .conText {
+      padding-bottom: 20px;
+    }
   }
 }
 @media (hover: none) {
-  .card {
-    transform: scale(.9);
-  }
-  .card:after {
-    height: 280px;
-  }
-  .card .conText p {
-    margin-bottom: 0px;
-    opacity: 1;
-  }
-  .card img {
-    transform: scale(1.25);
-  }
-  .card .ul {
-    transform: translate(0);
-    opacity: 1;
-  }
-  .card .conText {
-    padding-bottom: 20px;
-  }
-  .card .conText p button {
-    background: #fff;
-    color: #000;
+  .containerCard {
+    .card:after {
+      height: 280px;
+    }
+    .card .conText p {
+      margin-bottom: 0px;
+      opacity: 1;
+    }
+    .card img {
+      transform: scale(1.25);
+    }
+    .card .ul {
+      transform: translate(0);
+      opacity: 1;
+    }
+    .card .conText {
+      padding-bottom: 20px;
+    }
   }
 }
 
