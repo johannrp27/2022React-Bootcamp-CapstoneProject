@@ -1,10 +1,29 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import PropTypes from 'prop-types';
 import styles from '../styles/ProductDetail.module.scss'
+import appContext from '../context/context';
 
 const ProductFeatures = ({data}) => {
+  console.log(data);
   const [amount, setAmount] = useState(1)
+  const {addProductToCart} = useContext(appContext);
+  const toggleAddProduct = () => {
+    addProductToCart(data.id, amount)
+  }
 
+  const handleAddAmount = (type) => {
+    if(type === 'plus') {
+      if(amount < data.stock) {
+        setAmount(prev => prev+1)
+      }
+    } else {
+      setAmount(prev => prev-1)
+    }
+  }
+  const setManualInput = (amount) => {
+    setAmount(amount < data.stock ? amount : data.stock)
+  }
+  console.log(data.stock);
   return (
     <div className='mx-2 mx-lg-4 pe-3'>
       <h4>{data.name}</h4>
@@ -36,19 +55,21 @@ const ProductFeatures = ({data}) => {
         <div className={styles.selector}>
           <button
             className={`btn ${styles.minus}`}
-            onClick={() => setAmount(prev => prev-1)}>-</button>
+            onClick={() => handleAddAmount('minus')}>-</button>
           <input
             className={styles.inputAmount}
             type="number"
             value={amount}
-            onChange={({target}) => setAmount(+target.value)}
+            onChange={({target}) => setManualInput(+target.value)}
             name="amount"
             id="amountProd" />
           <button
             className={`btn ${styles.plus}`}
-            onClick={() => setAmount(prev => prev+1)}>+</button>
+            onClick={() => handleAddAmount('plus')}>+</button>
         </div>
         <button
+          disabled={data.stock === 0 || amount < 1}
+          onClick={toggleAddProduct}
           className={`btn w-100 ${styles.add}`}>Add to cart</button>
       </div>
     </div>
