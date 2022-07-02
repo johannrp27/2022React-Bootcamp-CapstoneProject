@@ -38,8 +38,15 @@ const ProductCard = ({id, name, urlImage, alt, shortDescription, stock, price}) 
         </div>
       </Link>
       <button
+        disabled={stock === 0}
         className={styles.btnAdd}
-        onClick={toggleAddProduct}>Add to cart</button>
+        onClick={toggleAddProduct}>
+        {
+          stock === 0
+          ? 'Out of stock'
+          : 'Add to cart'
+        }
+      </button>
     </div>
   )
 }
