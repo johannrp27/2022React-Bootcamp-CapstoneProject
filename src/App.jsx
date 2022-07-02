@@ -6,32 +6,40 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ProductDetail from './views/ProductDetail';
 import SearchResults from './views/SearchResults';
+import AppState from './context/state';
+import ShoppingCart from './views/ShoppingCart';
 
 function App() {
 
   return (
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route
-          path="/home"
-          element={<Home />} />
-        <Route
-          path="/products"
-          element={<ProductList />} />
-        <Route
-          path="/products/:id"
-          element={<ProductDetail />} />
-        <Route
-          path="/search"
-          element={<SearchResults />}
-        />
-        <Route
-          path="/"
-          element={<Home />} />
-      </Routes>
-      <Footer />
-    </div>
+    <AppState>
+      <div className="App">
+        <Header />
+        <div className='headerSpace'>
+          <Routes>
+            <Route
+              path="/home"
+              element={<Home />} />
+            <Route
+              path="/products"
+              element={<ProductList />} />
+            <Route
+              path="/products/:id"
+              element={<ProductDetail />} />
+            <Route
+              path="/search"
+              element={<SearchResults />} />
+            <Route
+              path="/cart"
+              element={<ShoppingCart />} />
+            <Route
+              path="/"
+              element={<Home />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </AppState>
   );
 }
 
