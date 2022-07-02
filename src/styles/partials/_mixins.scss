@@ -12,6 +12,11 @@
   outline: none;
   border-radius: 6px;
   cursor: pointer;
+
+  &:disabled {
+    opacity: .4;
+    pointer-events:none;
+  }
 }
 .active {
   background: #6fb642;
