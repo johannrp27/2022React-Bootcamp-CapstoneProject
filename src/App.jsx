@@ -8,6 +8,7 @@ import ProductDetail from './views/ProductDetail';
 import SearchResults from './views/SearchResults';
 import AppState from './context/state';
 import ShoppingCart from './views/ShoppingCart';
+import Checkout from './views/Checkout';
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
             <Route
               path="/cart"
               element={<ShoppingCart />} />
+            <Route
+              path="/checkout"
+              element={<Checkout />} />
             <Route
               path="/"
               element={<Home />} />

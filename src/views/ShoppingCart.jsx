@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react'
 import appContext from '../context/context';
 import styles from '../styles/ShoppingCart.module.scss';
+import { Link } from 'react-router-dom'
 
 const ShoppingCart = () => {
   const { productsInCart, removeItem, totalPriceProducts, modifyAmount } = useContext(appContext);
@@ -92,7 +93,9 @@ const ShoppingCart = () => {
                 </tfoot>
               </table>
               <div className='text-end'>
-                <button className='btn'>Proceed to checkout</button>
+                <Link to='/checkout'>
+                  <button className='btn'>Proceed to checkout</button>
+                </Link>
               </div>
             </div>
           </div>

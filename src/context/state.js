@@ -3,13 +3,18 @@ import appContext from './context'
 import PropTypes from 'prop-types';
 
 const AppState = ({ children }) => {
+  const [customerData, setCustomerData] = useState({
+    name: '',
+    email: '',
+    zip: '',
+    notes: '',
+  });
 
   const initialState = {
     countInCart: 0,
     productsInCart : new Map(),
   }
   const [appData, setAppData] = useState(initialState)
-
   const addProductToCart = (id, data, amount = 1) => {
     const newMap = appData.productsInCart;
     newMap.has(id)
@@ -40,7 +45,7 @@ const AppState = ({ children }) => {
       productsInCart: newMap,
     }))
   }
-   const removeItem = (key) => {
+  const removeItem = (key) => {
     const newMap = appData.productsInCart;
     newMap.delete(key);
     setAppData(old => ({
@@ -71,6 +76,8 @@ const AppState = ({ children }) => {
         appData,
         removeItem,
         setAppData,
+        customerData,
+        setCustomerData,
         modifyAmount,
         addProductToCart,
         totalPriceProducts: getTotalPriceProducts(),
