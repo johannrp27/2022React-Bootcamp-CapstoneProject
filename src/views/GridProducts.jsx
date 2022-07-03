@@ -9,6 +9,7 @@ const GridProducts = ({products}) => {
       {
         products.map(({id, data}) => (
           <ProductCard
+            data={data}
             id={id}
             sku={data.sku}
             urlImage={data.mainimage.url}
