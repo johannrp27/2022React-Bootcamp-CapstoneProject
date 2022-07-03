@@ -10,16 +10,53 @@ const AppState = ({ children }) => {
   }
   const [appData, setAppData] = useState(initialState)
 
-  const addProductToCart = (id, amount = 1) => {
+  const addProductToCart = (id, data, amount = 1) => {
     const newMap = appData.productsInCart;
     newMap.has(id)
     ?  newMap.delete(id)
-    : newMap.set(id, amount)
+    : newMap.set(id, {data, amount})
     setAppData(old => ({
         ...old,
         productsInCart: newMap,
     }))
   }
+  const modifyAmount = (id, amount) => {
+    const newMap = appData.productsInCart;
+    const { data } = newMap.get(id);
+    let newAmount;
+    if(amount <= 0 ){
+      newAmount = 1;
+    } else if(amount > data.stock ) {
+      newAmount = data.stock;
+    } else {
+      newAmount = amount;
+    }
+    newMap.set(id, {
+      data,
+      amount: newAmount,
+    })
+    setAppData(old => ({
+      ...old,
+      productsInCart: newMap,
+    }))
+  }
+   const removeItem = (key) => {
+    const newMap = appData.productsInCart;
+    newMap.delete(key);
+    setAppData(old => ({
+      ...old,
+      productsInCart: newMap,
+    }))
+  }
+
+  const getTotalPriceProducts = () => {
+    let total = 0;
+    appData.productsInCart.forEach(({amount, data}) => {
+      total += Number(amount * data.price);
+    })
+    return total;
+  }
+
   useEffect(() => {
     setAppData(old => ({
       ...old,
@@ -32,8 +69,11 @@ const AppState = ({ children }) => {
       value={{
         ...appData,
         appData,
+        removeItem,
         setAppData,
+        modifyAmount,
         addProductToCart,
+        totalPriceProducts: getTotalPriceProducts(),
       }}
     >
       { children }
