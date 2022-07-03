@@ -4,13 +4,13 @@ import styles from '../styles/ProductCard.module.scss';
 import { Link } from 'react-router-dom';
 import appContext from '../context/context';
 
-const ProductCard = ({id, name, urlImage, alt, shortDescription, stock, price}) => {
+const ProductCard = ({data, id, name, urlImage, alt, shortDescription, stock, price}) => {
   const descriptionTrimmed = shortDescription?.slice(0, 80) + '...';
   const productName = name.split(' ').splice(0, 3).join(' ');
 
   const {addProductToCart} = useContext(appContext);
   const toggleAddProduct = () => {
-    addProductToCart(id)
+    addProductToCart(id, data)
   }
   return (
     <div className={styles.containerCard}>
@@ -59,5 +59,6 @@ ProductCard.propTypes = {
   shortDescription: PropTypes.string,
   stock: PropTypes.number,
   price: PropTypes.number,
+  data: PropTypes.object,
 }
 export default ProductCard

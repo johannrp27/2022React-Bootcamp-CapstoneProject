@@ -4,11 +4,10 @@ import styles from '../styles/ProductDetail.module.scss'
 import appContext from '../context/context';
 
 const ProductFeatures = ({data}) => {
-  console.log(data);
   const [amount, setAmount] = useState(1)
   const {addProductToCart} = useContext(appContext);
   const toggleAddProduct = () => {
-    addProductToCart(data.id, amount)
+    addProductToCart(data.id, data, amount)
   }
 
   const handleAddAmount = (type) => {
@@ -20,10 +19,11 @@ const ProductFeatures = ({data}) => {
       setAmount(prev => prev-1)
     }
   }
+
   const setManualInput = (amount) => {
     setAmount(amount < data.stock ? amount : data.stock)
   }
-  console.log(data.stock);
+
   return (
     <div className='mx-2 mx-lg-4 pe-3'>
       <h4>{data.name}</h4>
