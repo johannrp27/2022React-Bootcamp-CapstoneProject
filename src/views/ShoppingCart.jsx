@@ -14,9 +14,9 @@ const ShoppingCart = () => {
         ? ( <h4>No items in cart</h4>)
         : (
           <div className='container'>
-            <div className='d-flex flex-column gap-5 justify-content-center'>
+            <div className=''>
               <table
-                className="table d-block"
+                className="table d-block mb-3"
                 border="1"
                 frame="void"
                 rules="rows">

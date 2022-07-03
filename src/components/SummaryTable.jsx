@@ -6,7 +6,7 @@ const SummaryTable = () => {
   const { productsInCart, totalPriceProducts } = useContext(appContext);
 
   return (
-    <div>
+    <div className='d-flex justify-content-center'>
       <table
         className="table d-block"
         border="1"
