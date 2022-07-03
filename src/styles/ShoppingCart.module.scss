@@ -1,0 +1,34 @@
+.img {
+  width: 100px;
+}
+table {
+  vertical-align: top;
+  margin: auto;
+  overflow-x: scroll;
+}
+.table>*>* {
+  padding: 0.5rem 0.5rem;
+  border-bottom-width: 1px;
+}
+.tr {
+  font-weight: 400;
+  border: 1px solid #dee2e6;
+}
+thead th {
+  text-align: center;
+  padding: 10px 25px
+}
+tbody th {
+  padding: 0 25px;
+  font-weight: 400;
+  text-align: center;
+}
+tfoot th {
+  padding: 10px 0;
+}
+.removeItem {
+  color: #c50808;
+}
+.removeBtn {
+  background-color: transparent;
+}
