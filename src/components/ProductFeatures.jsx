@@ -6,7 +6,7 @@ import appContext from '../context/context';
 const ProductFeatures = ({data}) => {
   const [amount, setAmount] = useState(1)
   const {addProductToCart} = useContext(appContext);
-  const toggleAddProduct = () => {
+  const handleAddProduct = () => {
     addProductToCart(data.id, data, amount)
   }
 
@@ -69,7 +69,7 @@ const ProductFeatures = ({data}) => {
         </div>
         <button
           disabled={data.stock === 0 || amount < 1}
-          onClick={toggleAddProduct}
+          onClick={handleAddProduct}
           className={`btn w-100 ${styles.add}`}>Add to cart</button>
       </div>
     </div>

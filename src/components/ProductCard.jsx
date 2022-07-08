@@ -9,7 +9,7 @@ const ProductCard = ({data, id, name, urlImage, alt, shortDescription, stock, pr
   const productName = name.split(' ').splice(0, 3).join(' ');
 
   const {addProductToCart} = useContext(appContext);
-  const toggleAddProduct = () => {
+  const handleAddProduct = () => {
     addProductToCart(id, data)
   }
   return (
@@ -40,7 +40,7 @@ const ProductCard = ({data, id, name, urlImage, alt, shortDescription, stock, pr
       <button
         disabled={stock === 0}
         className={styles.btnAdd}
-        onClick={toggleAddProduct}>
+        onClick={handleAddProduct}>
         {
           stock === 0
           ? 'Out of stock'

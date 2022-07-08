@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import appContext from './context'
 import PropTypes from 'prop-types';
 
@@ -15,16 +15,32 @@ const AppState = ({ children }) => {
     productsInCart : new Map(),
   }
   const [appData, setAppData] = useState(initialState)
+
   const addProductToCart = (id, data, amount = 1) => {
     const newMap = appData.productsInCart;
     newMap.has(id)
-    ?  newMap.delete(id)
-    : newMap.set(id, {data, amount})
+    ?  newMap.set(id, { data, amount: +newMap.get(id).amount + 1 })
+    : newMap.set(id, { data, amount })
     setAppData(old => ({
         ...old,
         productsInCart: newMap,
     }))
+    getNewCountProducts()
   }
+
+  const getNewCountProducts = () => {
+    const newMap = appData.productsInCart;
+    const iteratorMap = newMap.values();
+    let total = 0;
+    for(const {amount} of iteratorMap) {
+      total += +amount;
+    }
+    setAppData(old => ({
+      ...old,
+      countInCart: total,
+    }))
+  }
+
   const modifyAmount = (id, amount) => {
     const newMap = appData.productsInCart;
     const { data } = newMap.get(id);
@@ -44,6 +60,7 @@ const AppState = ({ children }) => {
       ...old,
       productsInCart: newMap,
     }))
+    getNewCountProducts()
   }
   const removeItem = (key) => {
     const newMap = appData.productsInCart;
@@ -61,13 +78,6 @@ const AppState = ({ children }) => {
     })
     return total;
   }
-
-  useEffect(() => {
-    setAppData(old => ({
-      ...old,
-      countInCart: appData.productsInCart.size,
-    }))
-  }, [appData.productsInCart.size])
 
   return (
     <appContext.Provider
