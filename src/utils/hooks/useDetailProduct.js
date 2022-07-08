@@ -28,7 +28,7 @@ export function useDetailProduct(productId) {
         );
         const { results: [result] } = await response.json();
         setProductDetail({
-          data: {...result.data, tags: result.tags},
+          data: {...result.data, id:productId,  tags: result.tags},
           isLoading: false,
           isEmpty: false,
         });

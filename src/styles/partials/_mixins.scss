@@ -12,6 +12,11 @@
   outline: none;
   border-radius: 6px;
   cursor: pointer;
+
+  &:disabled {
+    opacity: .4;
+    pointer-events:none;
+  }
 }
 .active {
   background: #6fb642;
@@ -30,7 +35,18 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+.headerSpace {
+  margin-top: 6.2rem;
+}
 
+.info {
+  background-color: rgb(1, 151, 226);
+  color: white;
+}
+.success {
+  background: #6fb642;
+  color: white;
+}
 @keyframes spinner-border {
   100% {
     transform: rotate(360deg);

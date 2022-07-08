@@ -1,6 +1,10 @@
 .nav {
   background-color: #f4f4f4;
   box-shadow: 0 0 20px 0px #cecece;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 50;
 }
 .logo {
   flex-grow: 1;
@@ -18,6 +22,24 @@
   &:focus {
     outline: none;
   }
+}
+.cart {
+  position: relative;
+  font-size: 20px;
+}
+.badge {
+  position: absolute;
+  background-color: #1a8bd1;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  right: 0;
+  bottom: 0;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
 }
 
 .search {
