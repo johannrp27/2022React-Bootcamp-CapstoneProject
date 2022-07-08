@@ -52,7 +52,6 @@ const ShoppingCart = () => {
                               id="amountProduct"
                               className='text-center'
                               onChange={({target}) => modifyAmount(key, target.value)}
-                              min={0}
                               value={amount} />
                             {
                               amount === data.stock && (
@@ -94,7 +93,8 @@ const ShoppingCart = () => {
               </table>
               <div className='text-end'>
                 <Link to='/checkout'>
-                  <button className='btn'>Proceed to checkout</button>
+                  <button
+                    className='btn'>Proceed to checkout</button>
                 </Link>
               </div>
             </div>

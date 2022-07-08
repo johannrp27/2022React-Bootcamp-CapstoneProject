@@ -31,7 +31,6 @@ const CustomerInfo = () => {
               name='name'
               placeholder='Full Name'
               id="name"/>
-
           </div>
           <div className='d-flex flex-column'>
             <label htmlFor='email'>Email</label>
@@ -80,6 +79,11 @@ const CustomerInfo = () => {
           </Link>
           <button
             type='submit'
+            disabled={
+              !customerData.name ||
+              !customerData.email ||
+              !customerData.zip
+            }
             className='btn success'>
             Place Order
             <FontAwesomeIcon

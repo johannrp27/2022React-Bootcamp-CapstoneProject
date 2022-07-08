@@ -60,7 +60,7 @@ const ProductFeatures = ({data}) => {
             className={styles.inputAmount}
             type="number"
             value={amount}
-            onChange={({target}) => setManualInput(+target.value)}
+            onChange={({target}) => setManualInput(target.value)}
             name="amount"
             id="amountProd" />
           <button

@@ -45,9 +45,7 @@ const AppState = ({ children }) => {
     const newMap = appData.productsInCart;
     const { data } = newMap.get(id);
     let newAmount;
-    if(amount <= 0 ){
-      newAmount = 1;
-    } else if(amount > data.stock ) {
+    if(amount > data.stock ) {
       newAmount = data.stock;
     } else {
       newAmount = amount;
